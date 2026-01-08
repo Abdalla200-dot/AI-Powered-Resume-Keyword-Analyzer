@@ -1,0 +1,67 @@
+<div class="main-shell">
+  <h2>AI‑Powered Resume Keyword Analyzer</h2>
+  <p class="subtitle">
+    Upload your resume, paste a job description, and instantly see your keyword match score.
+  </p>
+
+  <div class="app-grid">
+    <!-- LEFT: inputs -->
+    <div class="panel">
+      <div class="field">
+        <label for="resumeFile">Resume PDF</label>
+        <input type="file" id="resumeFile" accept="application/pdf" />
+      </div>
+
+      <div class="field">
+        <label for="jobDesc">Job Description</label>
+        <textarea id="jobDesc" placeholder="Paste job description here"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="seniority">Target level</label>
+        <select id="seniority">
+          <option value="junior">Junior</option>
+          <option value="mid" selected>Mid‑level</option>
+          <option value="senior">Senior</option>
+        </select>
+      </div>
+
+      <button id="analyzeBtn">Analyze</button>
+    </div>
+
+    <!-- RIGHT: results -->
+    <div class="panel">
+      <div class="results-card">
+        <p id="summary">Upload a resume and paste a job description to begin.</p>
+
+        <div id="scoreBarOuter">
+          <div id="scoreBarInner"></div>
+        </div>
+
+        <div class="keywords-block">
+          <div>
+            <h4>Present keywords</h4>
+            <div id="present" class="keywords-scroller"></div>
+          </div>
+          <div>
+            <h4>Missing keywords</h4>
+            <div id="missing" class="keywords-scroller"></div>
+          </div>
+        </div>
+
+        <div class="tips">
+          <h4>Smart tips</h4>
+          <ul id="tipsList"></ul>
+        </div>
+      </div>
+
+      <p class="footer-note">
+        Tip: Focus on adding missing skills you truly have; never lie on a resume.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- pdf.js from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+
